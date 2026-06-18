@@ -13,6 +13,7 @@ public class App {
 
             System.out.println("Qual a coluna?");
             int coluna = sc.nextInt();
+            
             if (jogada % 2 == 0) {
                 matriz[linha][coluna] = 'X';
             } else {
