@@ -8,12 +8,23 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         for (int jogada = 0; jogada < 9; jogada++) {
-            System.out.println("Qual a linha?");
-            int linha = sc.nextInt();
+            int linha;
+            int coluna;
 
-            System.out.println("Qual a coluna?");
-            int coluna = sc.nextInt();
-            
+            while (true) {
+                System.out.println("Qual a linha? (0-2)");
+                linha = sc.nextInt();
+
+                System.out.println("Qual a coluna? (0-2)");
+                coluna = sc.nextInt();
+
+                if (linha >= 0 && linha <= 2 && coluna >= 0 && coluna <= 2) {
+                    break; // posição existe
+                }
+
+                System.out.println("Posição inválida! Tente novamente.");
+            }
+
             if (jogada % 2 == 0) {
                 matriz[linha][coluna] = 'X';
             } else {
